@@ -5,6 +5,7 @@ import ProductCard from "@/components/ui/ProductCard";
 import Button from "@/components/ui/Button";
 import Loading from "@/components/ui/Loading";
 import Image from 'next/image';
+import { mockVendors } from "@/app/api/vendors/data";
 
 interface Product {
   id: number;
@@ -31,11 +32,17 @@ interface VendorPageProps {
   };
 }
 
+// Generate static params for all vendors
+export async function generateStaticParams() {
+  return mockVendors.map((vendor) => ({
+    vendorSlug: vendor.slug,
+  }));
+}
+
 // Fetch vendor data from API
 async function getVendor(slug: string): Promise<Vendor | null> {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    const response = await fetch(`${baseUrl}/api/vendors/${slug}`, {
+    const response = await fetch(`/api/vendors/${slug}`, {
       cache: 'no-store' // Ensure fresh data
     });
 
