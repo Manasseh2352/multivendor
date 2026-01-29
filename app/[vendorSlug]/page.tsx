@@ -10,6 +10,7 @@ interface Product {
   id: number;
   name: string;
   price: number;
+  img: string;
 }
 
 interface Vendor {
@@ -66,11 +67,11 @@ export async function generateMetadata({ params }: VendorPageProps): Promise<Met
     title: `${vendor.name} - ${vendor.category} | MultiVendor Platform`,
     description: vendor.description,
     keywords: [vendor.category, vendor.name, 'products', 'shopping', 'online store'],
-    images: vendor.img,
     openGraph: {
       title: `${vendor.name} - ${vendor.category}`,
       description: vendor.description,
       type: 'website',
+      images: [vendor.img],
     },
     twitter: {
       card: 'summary_large_image',

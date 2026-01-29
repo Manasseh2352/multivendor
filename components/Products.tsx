@@ -28,7 +28,7 @@ interface Vendor {
 type SortOption = 'price-low' | 'price-high' | 'recent';
 
 export default function Products() {
-  const [allProducts, setAllProducts] = useState<Array<{product: Product, vendorName: string, vendorSlug: string}>>([]);
+  const [allProducts, setAllProducts] = useState<Array<{product: Product, vendorName: string, vendorSlug: string, vendorImg: string}>>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');

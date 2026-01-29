@@ -34,13 +34,15 @@ export default function ProductCard({
                 className="text-lg flex text-blue-600 hover:text-blue-800  font-medium"
               >
                 by {vendorName}
-                <Image 
-                src={vendorImg}
-                width={100}
-                height={100}
-                alt='vendors Image'
-                className='rounded-full h-10 w-10 object-cover '
-                />
+                {vendorImg && (
+                  <Image 
+                  src={vendorImg}
+                  width={100}
+                  height={100}
+                  alt='vendors Image'
+                  className='rounded-full h-10 w-10 object-cover '
+                  />
+                )}
               </Link>
             ) : (
               <p className="text-sm text-gray-500">by {vendorName}</p>
