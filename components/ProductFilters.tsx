@@ -26,7 +26,7 @@ export default function ProductFilters({
   filteredCount
 }: ProductFiltersProps) {
   return (
-    <div className="mb-6 bg-secondary p-4 rounded-lg">
+    <div className="mb-6 bg-gray-50 p-4 rounded-lg">
       <div className="flex flex-col md:flex-row gap-4 items-center">
         {/* Search */}
         <div className="flex-1">
