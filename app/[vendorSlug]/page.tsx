@@ -89,7 +89,7 @@ export default async function VendorPage({ params }: VendorPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary">
       <Nav />
 
       <div className="pt-20 pb-12">
@@ -97,7 +97,7 @@ export default async function VendorPage({ params }: VendorPageProps) {
         <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white">
           <div className="container mx-auto px-4 py-16">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+              <div className="inline-block bg-primary/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                 <span className="text-sm font-medium">{vendor.category}</span>
               </div>
 

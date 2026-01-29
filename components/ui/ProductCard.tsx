@@ -24,7 +24,7 @@ export default function ProductCard({
   showVendor = true
 }: ProductCardProps) {
   return (
-    <div className="border-2 shadow-lg rounded-2xl p-6 bg-white hover:shadow-xl transition-shadow flex flex-col justify-between h-full">
+    <div className="border-2 shadow-lg rounded-2xl p-6 bg-primary hover:shadow-xl transition-shadow flex flex-col justify-between h-full">
       <div className="flex-1">
         {showVendor && vendorName && (
           <div className="mb-1">

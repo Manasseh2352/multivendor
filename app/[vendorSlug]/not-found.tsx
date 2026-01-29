@@ -4,7 +4,7 @@ import Button from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary">
       <Nav />
 
       <div className="pt-20 pb-12">

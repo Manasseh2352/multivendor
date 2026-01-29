@@ -1,15 +1,11 @@
 import { NextResponse } from 'next/server';
 import { mockVendors } from '../data';
 
-interface RouteParams {
-  params: {
-    vendorSlug: string;
-  };
-}
 
-export async function GET(request: Request, { params }: RouteParams) {
+
+export async function GET(request: Request, { params }: { params: { vendorSlug: string } }) {
   try {
-    const { vendorSlug } = await params;
+    const { vendorSlug } = params;
 
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100));

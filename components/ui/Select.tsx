@@ -18,7 +18,7 @@ export default function Select({
 }: SelectProps) {
   return (
     <select
-      className={`px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white ${className}`}
+      className={`px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-primary ${className}`}
       {...props}
     >
       {placeholder && (
