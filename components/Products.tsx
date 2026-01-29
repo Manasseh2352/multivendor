@@ -10,12 +10,14 @@ interface Product {
   id: number;
   name: string;
   price: number;
+  img: string
 }
 
 interface Vendor {
   id: string;
   name: string;
   slug: string;
+  img: string;
   description: string;
   category: string;
   products: Product[];
@@ -26,7 +28,7 @@ interface Vendor {
 type SortOption = 'price-low' | 'price-high' | 'recent';
 
 export default function Products() {
-  const [allProducts, setAllProducts] = useState<Array<{product: Product, vendorName: string}>>([]);
+  const [allProducts, setAllProducts] = useState<Array<{product: Product, vendorName: string, vendorSlug: string}>>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -45,7 +47,9 @@ export default function Products() {
           const allProducts = data.data.flatMap((vendor: Vendor) =>
             vendor.products.map(product => ({
               product,
-              vendorName: vendor.name
+              vendorName: vendor.name,
+              vendorSlug: vendor.slug,
+              vendorImg: vendor.img
             }))
           );
           setAllProducts(allProducts);
@@ -153,6 +157,8 @@ export default function Products() {
                 key={item.product.id}
                 product={item.product}
                 vendorName={item.vendorName}
+                vendorSlug={item.vendorSlug}
+                vendorImg={item.vendorImg}
               />
             ))}
           </div>

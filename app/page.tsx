@@ -46,41 +46,6 @@ export default async function Page() {
           <Products />
         </div>
 
-        {/* Featured Vendors Section */}
-        <div id="vendors" className="bg-gray-50 py-16">
-          <div className="container mx-auto px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Featured Vendors</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Explore our trusted vendors and discover unique products from different categories
-              </p>
-            </div>
-
-            {vendors.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {vendors.map((vendor) => (
-                  <Link key={vendor.id} href={`/${vendor.slug}`} className="group">
-                    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                      <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600">{vendor.name}</h3>
-                      <p className="text-gray-600 mb-4">{vendor.description}</p>
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm text-gray-500">⭐ {vendor.rating}/5</span>
-                        <span className="text-sm text-gray-500">{vendor.totalProducts} products</span>
-                      </div>
-                      <Button variant="outline" size="sm">
-                        Visit Store
-                      </Button>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center text-gray-500">
-                <p>Loading vendors...</p>
-              </div>
-            )}
-          </div>
-        </div>
       </div>
     </div>
   );

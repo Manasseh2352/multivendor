@@ -9,7 +9,7 @@ interface RouteParams {
 
 export async function GET(request: Request, { params }: RouteParams) {
   try {
-    const { vendorSlug } = params;
+    const { vendorSlug } = await params;
 
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100));
