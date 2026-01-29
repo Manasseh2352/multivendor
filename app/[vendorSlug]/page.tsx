@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Nav from "@/components/Nav";
 import ProductCard from "@/components/ui/ProductCard";
 import Button from "@/components/ui/Button";
@@ -42,10 +43,11 @@ export async function generateStaticParams() {
 // Fetch vendor data from API
 async function getVendor(slug: string): Promise<Vendor | null> {
   try {
-    // Use VERCEL_URL for production, fallback to localhost for development
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    // Get the current request headers to determine the base URL
+    const headersList = await headers();
+    const host = headersList.get('host') || 'localhost:3000';
+    const protocol = host.includes('localhost') ? 'http' : 'https';
+    const baseUrl = `${protocol}://${host}`;
 
     const response = await fetch(`${baseUrl}/api/vendors/${slug}`, {
       cache: 'no-store' // Ensure fresh data

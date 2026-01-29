@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MultiVendor Marketplace Platform
 
-## Getting Started
+A modern, responsive multivendor e-commerce platform built with Next.js, featuring vendor storefronts, product catalogs, and seamless shopping experiences.
 
-First, run the development server:
+## 🚀 Features
 
+- **Multivendor Support**: Multiple vendors can showcase their products on individual storefronts
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Dark/Light Theme**: Built-in theme toggle for user preference
+- **Product Filtering**: Advanced filtering options for products
+- **Search Functionality**: Search through products and vendors
+- **SEO Optimized**: Server-side rendering and static generation for better SEO
+- **Fast Performance**: Built with Next.js for optimal performance
+- **TypeScript**: Full type safety throughout the application
+- **Tailwind CSS**: Modern styling with utility-first CSS framework
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16.1.4
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **UI Components**: Custom component library
+- **API**: Next.js API Routes
+- **Deployment**: Vercel-ready
+
+## 📦 Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd multivendor
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## 📖 Usage
 
-To learn more about Next.js, take a look at the following resources:
+### Development
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+multivendor/
+├── app/                    # Next.js app directory
+│   ├── api/               # API routes
+│   │   └── vendors/       # Vendor-related APIs
+│   ├── [vendorSlug]/      # Dynamic vendor pages
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Home page
+├── components/            # Reusable components
+│   ├── ui/               # UI components
+│   └── ...               # Feature components
+├── public/               # Static assets
+└── package.json          # Dependencies and scripts
+```
 
-## Deploy on Vercel
+## 🏪 Vendor Categories
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The platform currently supports vendors in the following categories:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Electronics**: Premium gadgets and tech products
+- **Fashion**: Trendy clothing and lifestyle items
+- **Home & Garden**: Home improvement and garden supplies
+
+## 🔌 API Endpoints
+
+- `GET /api/vendors` - Get all vendors
+- `GET /api/vendors/[slug]` - Get specific vendor details
+
+## 🎨 Customization
+
+### Adding New Vendors
+
+Vendors are defined in `app/api/vendors/data.ts`. Add new vendor objects to the `mockVendors` array:
+
+```typescript
+{
+  id: 'vendor-id',
+  name: 'Vendor Name',
+  slug: 'vendor-slug',
+  description: 'Vendor description',
+  category: 'Category',
+  img: '/path/to/image.jpg',
+  products: [...],
+  rating: 4.5,
+  totalProducts: 10
+}
+```
+
+### Styling
+
+The project uses Tailwind CSS for styling. Customize themes in `app/globals.css` or modify component styles directly.
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically with zero configuration
+
+### Other Platforms
+
+The app can be deployed to any platform supporting Node.js:
+
+```bash
+npm run build
+npm run start
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Support
+
+For support, email support@multivendor.com or join our Discord community.
+
+---
+
+Built with ❤️ using Next.js
